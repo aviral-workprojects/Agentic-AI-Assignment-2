@@ -1,0 +1,4 @@
+groq
+rank_bm25
+streamlit
+python-dotenv

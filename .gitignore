@@ -1,0 +1,35 @@
+# secrets / local config (the placeholder template stays tracked)
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+
+# virtual environments
+venv/
+.venv/
+env/
+
+# python artifacts
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+
+# local databases and runtime traces (may contain private/synthetic chat data)
+data/students.db
+*.db
+*.sqlite
+*.sqlite3
+traces/
+
+# local evaluation working data and generated/backup results (eval/results_a1.md IS tracked)
+eval/.eval_data/
+eval/results_a1_partial.md
+eval/results_*.prev-*.md
+eval/results_*_partial*.md
+
+# Assignment 2: generated/backup results stay out; the deliverable reports and sanitized samples are tracked:
+#   eval/results_a1.md, eval/results_a1_baseline.md, eval/results_a2.md, eval/samples/*
+eval/results_a2_partial.md

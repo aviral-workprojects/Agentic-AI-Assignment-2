@@ -1,0 +1,202 @@
+[
+ {
+  "id": "fee_status",
+  "student": "S101",
+  "turns": [
+   "What is my current fee status?"
+  ],
+  "must_tools": [
+   "get_fee_status"
+  ],
+  "contains": [
+   [
+    "45000"
+   ]
+  ]
+ },
+ {
+  "id": "portal_failed",
+  "student": "S101",
+  "turns": [
+   "The payment portal failed. Can I pay on the next working day?"
+  ],
+  "must_tools": [
+   "search_policy"
+  ],
+  "contains": [
+   [
+    "next working day"
+   ],
+   [
+    "ticket"
+   ]
+  ]
+ },
+ {
+  "id": "scholarship",
+  "student": "S102",
+  "turns": [
+   "What is my scholarship status?"
+  ],
+  "must_tools": [
+   "get_scholarship_status"
+  ],
+  "contains": [
+   [
+    "approved"
+   ]
+  ]
+ },
+ {
+  "id": "memory_write",
+  "student": "S101",
+  "turns": [
+   "For future reference, my preferred contact method is WhatsApp."
+  ],
+  "must_tools": [
+   "save_memory"
+  ],
+  "mem_has": {
+   "preferred_contact": "whatsapp"
+  }
+ },
+ {
+  "id": "memory_recall_new_session",
+  "student": "S103",
+  "setup_memory": {
+   "preferred_contact": "WhatsApp"
+  },
+  "turns": [
+   "What contact method did I tell you I prefer?"
+  ],
+  "must_not_tools": [
+   "get_student_record",
+   "search_policy"
+  ],
+  "contains": [
+   [
+    "whatsapp"
+   ]
+  ],
+  "mem_used": [
+   "preferred_contact"
+  ]
+ },
+ {
+  "id": "sensitive_otp",
+  "student": "S101",
+  "turns": [
+   "My OTP is 482913, please remember it for later."
+  ],
+  "mem_forbid": [
+   "482913"
+  ],
+  "not_contains": [
+   "482913"
+  ]
+ },
+ {
+  "id": "temporary_info",
+  "student": "S101",
+  "turns": [
+   "I'm travelling in Pune this week, remember that."
+  ],
+  "mem_forbid": [
+   "pune"
+  ]
+ },
+ {
+  "id": "no_policy",
+  "student": "S101",
+  "turns": [
+   "What is the refund policy for the hostel security deposit?"
+  ],
+  "must_tools": [
+   "search_policy"
+  ],
+  "abstain": true
+ },
+ {
+  "id": "course_change",
+  "student": "S101",
+  "turns": [
+   "Can I switch my elective in week 5 of the trimester?"
+  ],
+  "must_tools": [
+   "search_policy"
+  ],
+  "contains": [
+   [
+    "two weeks",
+    "2 weeks",
+    "first two"
+   ]
+  ]
+ },
+ {
+  "id": "create_ticket",
+  "student": "S101",
+  "turns": [
+   "My payment failed, transaction ref TXN778. Please raise a support ticket."
+  ],
+  "must_tools": [
+   "create_support_ticket"
+  ],
+  "tickets_delta": 1
+ },
+ {
+  "id": "tool_error",
+  "student": "S101",
+  "fail_tool": "get_fee_status",
+  "turns": [
+   "What is my fee status?"
+  ],
+  "must_tools": [
+   "get_fee_status"
+  ],
+  "not_contains": [
+   "45000"
+  ],
+  "contains": [
+   [
+    "unable",
+    "couldn't",
+    "could not",
+    "unavailable",
+    "error",
+    "try again",
+    "ticket"
+   ]
+  ]
+ },
+ {
+  "id": "small_talk",
+  "student": "S101",
+  "turns": [
+   "Hi, what can you help me with?"
+  ],
+  "must_not_tools": [
+   "get_student_record",
+   "get_fee_status",
+   "get_scholarship_status",
+   "search_policy",
+   "create_support_ticket",
+   "save_memory"
+  ]
+ },
+ {
+  "id": "missing_info",
+  "student": "S101",
+  "turns": [
+   "Please raise a ticket."
+  ],
+  "must_not_tools": [
+   "create_support_ticket"
+  ],
+  "contains": [
+   [
+    "?"
+   ]
+  ]
+ }
+]

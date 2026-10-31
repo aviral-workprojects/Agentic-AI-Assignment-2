@@ -1,0 +1,8 @@
+{
+ "source": "Aggregate figures reported by the project owner for the last full live Assignment 1 run. The authoritative per-case table is eval/results_a1.md in the owner's project (NOT included in this package); copy it to eval/results_a1_baseline.md to enable per-case comparison.",
+ "provider_model": "groq/openai/gpt-oss-20b",
+ "cases": 13, "passed": 13, "accuracy_pct": 100,
+ "tool_selection": {"appropriate": 11, "with_expectation": 11},
+ "mean_latency_s": 4.9, "p95_latency_s": 8.1,
+ "input_tokens": 11842, "output_tokens": 1534
+}
